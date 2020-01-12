@@ -1,0 +1,33 @@
+{
+  "name": "@projectlint/auditory-cli",
+  "version": "0.0.0",
+  "description": "'Batteries included' CLI for `projectlint`, a style checker and lint tool for (Node.js) projects",
+  "bin": {
+    "projectlint-auditory": "server.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectlint/auditory-cli.git"
+  },
+  "keywords": [
+    "auditory",
+    "loaded",
+    "fully",
+    "loaded",
+    "rules",
+    "projectlint"
+  ],
+  "author": "Jesús Leganés-Combarro 'piranna' <piranna@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/projectlint/auditory-cli/issues"
+  },
+  "homepage": "https://github.com/projectlint/auditory-cli#readme",
+  "dependencies": {
+    "@projectlint/cli": "projectlint/cli",
+    "@projectlint/rules-package.json": "github:projectlint/rules-package.json"
+  }
+}
