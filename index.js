@@ -21,12 +21,14 @@ const rules =
 }
 
 
+function mapValues([ruleName, value])
+{
+  return [`${this}:${ruleName}`, value]
+}
+
 function flatPackage([packageName, value])
 {
-  return Object.entries(value).map(function([ruleName, value])
-  {
-    return [`${packageName}:${ruleName}`, value]
-  })
+  return Object.entries(value).map(mapValues, packageName)
 }
 
 
