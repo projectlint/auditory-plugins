@@ -28,6 +28,7 @@
   "homepage": "https://github.com/projectlint/auditory-cli#readme",
   "dependencies": {
     "@projectlint/cli": "projectlint/cli",
-    "@projectlint/rules-package.json": "github:projectlint/rules-package.json"
+    "@projectlint/plugin-package.json": "github:projectlint/plugin-package.json",
+    "@projectlint/plugin-node.js": "github:projectlint/plugin-Node.js"
   }
 }
