@@ -6,18 +6,24 @@ const {
   config: {recommended: packageJsonConfig},
   rules: packageJsonRules
 } = require('@projectlint/plugin-package.json')
+const {
+  config: {recommended: readmeConfig},
+  rules: readmeRules
+} = require('@projectlint/plugin-README')
 
 
 const configs =
 {
-  '@projectlint/plugin-node.js'    : nodeJsConfig,
-  '@projectlint/rules-package.json': packageJsonConfig
+  '@projectlint/plugin-node.js'     : nodeJsConfig,
+  '@projectlint/plugin-package.json': packageJsonConfig,
+  '@projectlint/plugin-README'      : readmeConfig
 }
 
 const rules =
 {
-  '@projectlint/plugin-node.js'    : nodeJsRules,
-  '@projectlint/rules-package.json': packageJsonRules
+  '@projectlint/plugin-node.js'     : nodeJsRules,
+  '@projectlint/plugin-package.json': packageJsonRules,
+  '@projectlint/plugin-README'      : readmeRules
 }
 
 

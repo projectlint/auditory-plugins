@@ -16,7 +16,7 @@ test("smoke", function() {
           },
         ],
         Array [
-          "@projectlint/rules-package.json:npm-check-updates",
+          "@projectlint/plugin-package.json:npm-check-updates",
           Object {
             "error": Object {
               "errorLevel": 2,
@@ -28,7 +28,7 @@ test("smoke", function() {
           },
         ],
         Array [
-          "@projectlint/rules-package.json:npm-package-json-lint",
+          "@projectlint/plugin-package.json:npm-package-json-lint",
           Array [
             "error",
             Object {
@@ -85,6 +85,19 @@ test("smoke", function() {
             },
           ],
         ],
+        Array [
+          "@projectlint/plugin-README:single file",
+          "error",
+        ],
+        Array [
+          "@projectlint/plugin-README:standard readme",
+          Array [
+            "warning",
+            Array [
+              "slug",
+            ],
+          ],
+        ],
       ],
       "rules": Array [
         Array [
@@ -95,17 +108,31 @@ test("smoke", function() {
           },
         ],
         Array [
-          "@projectlint/rules-package.json:npm-check-updates",
+          "@projectlint/plugin-package.json:npm-check-updates",
           Object {
             "evaluate": [Function],
             "fix": [Function],
           },
         ],
         Array [
-          "@projectlint/rules-package.json:npm-package-json-lint",
+          "@projectlint/plugin-package.json:npm-package-json-lint",
           Object {
             "evaluate": [Function],
             "fix": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-README:single file",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-README:standard readme",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
           },
         ],
       ],

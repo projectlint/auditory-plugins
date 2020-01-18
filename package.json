@@ -28,8 +28,9 @@
   "homepage": "https://github.com/projectlint/auditory-cli#readme",
   "dependencies": {
     "@projectlint/cli": "projectlint/cli",
-    "@projectlint/plugin-package.json": "github:projectlint/plugin-package.json",
-    "@projectlint/plugin-node.js": "github:projectlint/plugin-Node.js"
+    "@projectlint/plugin-README": "github:projectlint/plugin-README",
+    "@projectlint/plugin-node.js": "github:projectlint/plugin-Node.js",
+    "@projectlint/plugin-package.json": "github:projectlint/plugin-package.json"
   },
   "devDependencies": {
     "jest-cli": "^24.9.0",
