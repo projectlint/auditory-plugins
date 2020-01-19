@@ -106,6 +106,13 @@ test("no arguments", function() {
             "warning",
             Array [
               "slug",
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "installable": true,
+              },
             ],
           ],
         ],
@@ -122,6 +129,7 @@ test("no arguments", function() {
           "@projectlint/plugin-package.json:has default version",
           Object {
             "evaluate": [Function],
+            "fetch": [Function],
           },
         ],
         Array [

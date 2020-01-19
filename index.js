@@ -26,12 +26,17 @@ module.exports = exports = function(
     const {config, rules: packageRules} = require(packageName)
 
     let packageConfig
+
     if(configLevel === 'strict')
       packageConfig = config['strict']
     if(!packageConfig || configLevel === 'recommended')
       packageConfig = config['recommended']
 
-    configs[packageName] = packageConfig || config['default']
+    if(!packageConfig)
+      throw new SyntaxError(`Package '${packageName}' don't have config level` +
+        ` '${configLevel}'`)
+
+    configs[packageName] = packageConfig
     rules  [packageName] = packageRules
 
     return acum
