@@ -7,10 +7,21 @@ const auditory = require('.')
 const params = require('./package.json')
 
 
-const {configs, rules, ...args} = parseArgs({params})
+const extraArguments =
+[
+  ['--configLevel', {
+    action: 'store',
+    choices: ['strict', 'recommeded', 'default'],
+    default: 'recommended',
+    dest: 'configLevel'
+  }],
+  ['--strict', {
+    action: 'store_const',
+    const: 'strict',
+    dest: 'configLevel'
+  }]
+]
 
-cli(
-  Object.assign(auditory.rules, rules),
-  configs.length ? configs : auditory.configs,
-  args
-)
+const {args, configs, rules} = auditory(parseArgs({extraArguments, params}))
+
+cli(rules, configs, args)

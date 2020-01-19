@@ -1,42 +1,47 @@
-const {
-  config: {recommended: nodeJsConfig},
-  rules: nodeJsRules
-} = require('@projectlint/plugin-node.js')
-const {
-  config: {recommended: packageJsonConfig},
-  rules: packageJsonRules
-} = require('@projectlint/plugin-package.json')
-const {
-  config: {recommended: readmeConfig},
-  rules: readmeRules
-} = require('@projectlint/plugin-README')
+const packages =
+[
+  '@projectlint/plugin-node.js',
+  '@projectlint/plugin-package.json',
+  '@projectlint/plugin-README'
+]
 
 
-const configs =
+function mapPackage([packageName, value])
 {
-  '@projectlint/plugin-node.js'     : nodeJsConfig,
-  '@projectlint/plugin-package.json': packageJsonConfig,
-  '@projectlint/plugin-README'      : readmeConfig
+  return Object.entries(value).map(mapValues, packageName)
 }
-
-const rules =
-{
-  '@projectlint/plugin-node.js'     : nodeJsRules,
-  '@projectlint/plugin-package.json': packageJsonRules,
-  '@projectlint/plugin-README'      : readmeRules
-}
-
 
 function mapValues([ruleName, value])
 {
   return [`${this}:${ruleName}`, value]
 }
 
-function flatPackage([packageName, value])
-{
-  return Object.entries(value).map(mapValues, packageName)
+
+module.exports = exports = function(
+  {configLevel, configs: parsedConfigs = [], rules: parsedRules, ...args} = {}
+) {
+  let {configs, rules} = packages.reduce(function(acum, packageName)
+  {
+    const {configs, rules} = acum
+    const {config, rules: packageRules} = require(packageName)
+
+    let packageConfig = configLevel === 'strict' && config['strict']
+    packageConfig = (!packageConfig || configLevel === 'recommended')
+      && config['recommended']
+
+    configs[packageName] = packageConfig || config['default']
+    rules  [packageName] = packageRules
+
+    return acum
+  }, {configs: {}, rules: {}})
+
+  configs = Object.entries(configs).flatMap(mapPackage)
+  rules = Object.entries(rules).flatMap(mapPackage)
+
+  configs = parsedConfigs.length ? parsedConfigs : configs
+  rules = Object.assign(rules, parsedRules)
+
+  return {args, configs, rules}
 }
 
-
-exports.configs = Object.entries(configs).flatMap(flatPackage)
-exports.rules   = Object.entries(rules  ).flatMap(flatPackage)
+exports.packages = packages

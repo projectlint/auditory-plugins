@@ -1,8 +1,15 @@
+const auditory = require("..");
+
 test("smoke", function() {
-  const result = require("..");
+  expect(auditory).toMatchInlineSnapshot(`[Function]`);
+});
+
+test("no arguments", function() {
+  const result = auditory({});
 
   expect(result).toMatchInlineSnapshot(`
     Object {
+      "args": Object {},
       "configs": Array [
         Array [
           "@projectlint/plugin-node.js:version",
@@ -14,6 +21,10 @@ test("smoke", function() {
               "status": "lts_active",
             },
           },
+        ],
+        Array [
+          "@projectlint/plugin-package.json:has default version",
+          "warning",
         ],
         Array [
           "@projectlint/plugin-package.json:npm-check-updates",
@@ -105,6 +116,12 @@ test("smoke", function() {
           Object {
             "evaluate": [Function],
             "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-package.json:has default version",
+          Object {
+            "evaluate": [Function],
           },
         ],
         Array [
