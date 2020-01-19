@@ -25,9 +25,11 @@ module.exports = exports = function(
     const {configs, rules} = acum
     const {config, rules: packageRules} = require(packageName)
 
-    let packageConfig = configLevel === 'strict' && config['strict']
-    packageConfig = (!packageConfig || configLevel === 'recommended')
-      && config['recommended']
+    let packageConfig
+    if(configLevel === 'strict')
+      packageConfig = config['strict']
+    if(!packageConfig || configLevel === 'recommended')
+      packageConfig = config['recommended']
 
     configs[packageName] = packageConfig || config['default']
     rules  [packageName] = packageRules
