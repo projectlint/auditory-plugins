@@ -10,14 +10,13 @@ const params = require('./package.json')
 const extraArguments =
 [
   ['--configLevel', {
-    action: 'store',
     choices: ['strict', 'recommeded', 'default'],
     default: 'recommended',
     dest: 'configLevel'
   }],
   ['--strict', {
-    action: 'store_const',
-    const: 'strict',
+    action: 'storeConst',
+    constant: 'strict',
     dest: 'configLevel'
   }]
 ]
