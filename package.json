@@ -33,7 +33,7 @@
     "@projectlint/plugin-package.json": "github:projectlint/plugin-package.json"
   },
   "devDependencies": {
-    "jest-cli": "^24.9.0",
+    "jest-cli": "^25.1.0",
     "prettier": "^1.19.1"
   }
 }
