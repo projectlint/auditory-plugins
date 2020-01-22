@@ -21,6 +21,6 @@ const extraArguments =
   }]
 ]
 
-const {args, configs, rules} = auditory(parseArgs({extraArguments, params}))
+const {configs, options, rules} = auditory(parseArgs({extraArguments, params}))
 
-cli(rules, configs, args)
+cli(rules, configs, options).pipe(process.stdout)
