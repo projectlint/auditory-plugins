@@ -9,7 +9,6 @@ test("no arguments", function() {
 
   expect(result).toMatchInlineSnapshot(`
     Object {
-      "args": Object {},
       "configs": Array [
         Array [
           "@projectlint/plugin-node.js:version",
@@ -117,6 +116,8 @@ test("no arguments", function() {
           ],
         ],
       ],
+      "format": undefined,
+      "options": Object {},
       "rules": Array [
         Array [
           "@projectlint/plugin-node.js:version",

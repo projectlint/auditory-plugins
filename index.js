@@ -18,7 +18,13 @@ function mapValues([ruleName, value])
 
 
 module.exports = exports = function(
-  {configLevel, configs: parsedConfigs = [], rules: parsedRules, ...args} = {}
+  {
+    configLevel,
+    configs: parsedConfigs = [],
+    format,
+    rules: parsedRules,
+    ...options
+  } = {}
 ) {
   let {configs, rules} = packages.reduce(function(acum, packageName)
   {
@@ -48,7 +54,7 @@ module.exports = exports = function(
   configs = parsedConfigs.length ? parsedConfigs : configs
   rules = Object.assign(rules, parsedRules)
 
-  return {args, configs, rules}
+  return {configs, format, options, rules}
 }
 
 exports.packages = packages
