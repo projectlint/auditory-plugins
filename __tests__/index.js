@@ -22,6 +22,17 @@ test("no arguments", function() {
           },
         ],
         Array [
+          "@projectlint/plugin-package.json:engines.node version",
+          Object {
+            "error": Object {
+              "status": "maintained",
+            },
+            "warning": Object {
+              "status": "lts_active",
+            },
+          },
+        ],
+        Array [
           "@projectlint/plugin-package.json:has default version",
           "warning",
         ],
@@ -42,6 +53,7 @@ test("no arguments", function() {
           Array [
             "error",
             Object {
+              "engines-type": "error",
               "no-absolute-version-dependencies": "error",
               "no-absolute-version-devDependencies": "error",
               "no-duplicate-properties": "error",
@@ -59,6 +71,7 @@ test("no arguments", function() {
               "require-author": "error",
               "require-bugs": "error",
               "require-description": "error",
+              "require-engines": "warning",
               "require-homepage": "error",
               "require-license": "error",
               "require-repository": "error",
@@ -121,6 +134,13 @@ test("no arguments", function() {
       "rules": Array [
         Array [
           "@projectlint/plugin-node.js:version",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-package.json:engines.node version",
           Object {
             "evaluate": [Function],
             "fetch": [Function],
