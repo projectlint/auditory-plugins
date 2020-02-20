@@ -418,3 +418,13 @@ test("strict", function() {
     }
   `);
 });
+
+test("unkown configLevel", function() {
+  function func() {
+    auditory({ configLevel: "unknown" });
+  }
+
+  expect(func).toThrowErrorMatchingInlineSnapshot(
+    `"Package '@projectlint/plugin-README' don't have config level 'unknown'"`
+  );
+});
