@@ -1,16 +1,13 @@
 {
-  "name": "@projectlint/auditory-cli",
+  "name": "@projectlint/auditory-plugins",
   "version": "0.0.0",
-  "description": "'Batteries included' CLI for `projectlint`, a style checker and lint tool for (Node.js) projects",
-  "bin": {
-    "projectlint-auditory": "server.js"
-  },
+  "description": "Auditory plugins for `projectlint`, a style checker and lint tool for (Node.js) projects",
   "scripts": {
     "test": "jest --coverage --notify"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/projectlint/auditory-cli.git"
+    "url": "git+https://github.com/projectlint/auditory-plugins.git"
   },
   "keywords": [
     "auditory",
@@ -23,17 +20,17 @@
   "author": "Jesús Leganés-Combarro 'piranna' <piranna@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/projectlint/auditory-cli/issues"
+    "url": "https://github.com/projectlint/auditory-plugins/issues"
   },
-  "homepage": "https://github.com/projectlint/auditory-cli#readme",
+  "homepage": "https://github.com/projectlint/auditory-plugins#readme",
   "dependencies": {
-    "@projectlint/cli": "projectlint/cli",
     "@projectlint/plugin-README": "github:projectlint/plugin-README",
     "@projectlint/plugin-node.js": "github:projectlint/plugin-Node.js",
     "@projectlint/plugin-operating-system": "github:projectlint/plugin-Operating-System",
     "@projectlint/plugin-package.json": "github:projectlint/plugin-package.json"
   },
   "devDependencies": {
+    "@projectlint/projectlint": "github:projectlint/projectlint",
     "jest-cli": "^25.1.0",
     "prettier": "^1.19.1"
   }
