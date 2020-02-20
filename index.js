@@ -47,10 +47,11 @@ module.exports = exports = function(
     return acum
   }, {configs: {}, rules: {}})
 
-  configs = Object.entries(configs).flatMap(mapPackage)
-  rules = Object.entries(rules).flatMap(mapPackage)
+  configs = parsedConfigs.length
+          ? parsedConfigs
+          : Object.entries(configs).flatMap(mapPackage)
 
-  configs = parsedConfigs.length ? parsedConfigs : configs
+  rules = Object.entries(rules).flatMap(mapPackage)
   rules = Object.assign(rules, parsedRules)
 
   return {configs, format, options, rules}
