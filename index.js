@@ -17,7 +17,7 @@ function mapValues([ruleName, value])
 
 module.exports = exports = function(
   {
-    configLevel,
+    configLevel = 'recommended',
     configs: parsedConfigs = [],
     format,
     rules: parsedRules,
@@ -33,7 +33,8 @@ module.exports = exports = function(
 
     if(configLevel === 'strict')
       packageConfig = config['strict']
-    if(!packageConfig || configLevel === 'recommended')
+    if((configLevel === 'strict' && !packageConfig)
+    || configLevel === 'recommended')
       packageConfig = config['recommended']
 
     if(!packageConfig)
