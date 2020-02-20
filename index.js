@@ -2,6 +2,7 @@ const packages =
 [
   '@projectlint/plugin-node.js',
   '@projectlint/plugin-package.json',
+  '@projectlint/plugin-operating-system',
   '@projectlint/plugin-README'
 ]
 
