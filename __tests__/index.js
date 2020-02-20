@@ -5,7 +5,7 @@ test("smoke", function() {
 });
 
 test("no arguments", function() {
-  const result = auditory({});
+  const result = auditory();
 
   expect(result).toMatchInlineSnapshot(`
     Object {
