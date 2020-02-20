@@ -1,10 +1,7 @@
-const packages =
-[
-  '@projectlint/plugin-node.js',
-  '@projectlint/plugin-package.json',
-  '@projectlint/plugin-operating-system',
-  '@projectlint/plugin-README'
-]
+const {dependencies} = require('./package.json')
+
+
+const packages = Object.keys(dependencies)
 
 
 function mapPackage([packageName, value])

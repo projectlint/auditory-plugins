@@ -11,6 +11,26 @@ test("no arguments", function() {
     Object {
       "configs": Array [
         Array [
+          "@projectlint/plugin-README:single file",
+          "error",
+        ],
+        Array [
+          "@projectlint/plugin-README:standard readme",
+          Array [
+            "warning",
+            Array [
+              "slug",
+              undefined,
+              undefined,
+              undefined,
+              undefined,
+              Object {
+                "installable": true,
+              },
+            ],
+          ],
+        ],
+        Array [
           "@projectlint/plugin-node.js:version",
           Object {
             "error": Object {
@@ -18,6 +38,14 @@ test("no arguments", function() {
             },
             "warning": Object {
               "status": "lts_active",
+            },
+          },
+        ],
+        Array [
+          "@projectlint/plugin-operating-system:version",
+          Object {
+            "error": Object {
+              "status": "maintained",
             },
           },
         ],
@@ -53,6 +81,13 @@ test("no arguments", function() {
           Array [
             "error",
             Object {
+              "description-format": Array [
+                "error",
+                Object {
+                  "forbidEndingPeriod": true,
+                  "requireCapitalFirstLetter": true,
+                },
+              ],
               "engines-type": "error",
               "no-absolute-version-dependencies": "error",
               "no-absolute-version-devDependencies": "error",
@@ -108,32 +143,33 @@ test("no arguments", function() {
             },
           ],
         ],
-        Array [
-          "@projectlint/plugin-README:single file",
-          "error",
-        ],
-        Array [
-          "@projectlint/plugin-README:standard readme",
-          Array [
-            "warning",
-            Array [
-              "slug",
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              Object {
-                "installable": true,
-              },
-            ],
-          ],
-        ],
       ],
       "format": undefined,
       "options": Object {},
       "rules": Array [
         Array [
+          "@projectlint/plugin-README:single file",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-README:standard readme",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
           "@projectlint/plugin-node.js:version",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-operating-system:version",
           Object {
             "evaluate": [Function],
             "fetch": [Function],
@@ -165,20 +201,6 @@ test("no arguments", function() {
           Object {
             "evaluate": [Function],
             "fix": [Function],
-          },
-        ],
-        Array [
-          "@projectlint/plugin-README:single file",
-          Object {
-            "evaluate": [Function],
-            "fetch": [Function],
-          },
-        ],
-        Array [
-          "@projectlint/plugin-README:standard readme",
-          Object {
-            "evaluate": [Function],
-            "fetch": [Function],
           },
         ],
       ],
