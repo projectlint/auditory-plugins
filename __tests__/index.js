@@ -428,3 +428,73 @@ test("unkown configLevel", function() {
     `"Package '@projectlint/plugin-README' don't have config level 'unknown'"`
   );
 });
+
+test("configs", function() {
+  const result = auditory({ configs: "foo" });
+
+  expect(result).toMatchInlineSnapshot(`
+    Object {
+      "configs": "foo",
+      "format": undefined,
+      "options": Object {},
+      "rules": Array [
+        Array [
+          "@projectlint/plugin-README:single file",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-README:standard readme",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-node.js:version",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-operating-system:version",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-package.json:engines.node version",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-package.json:has default version",
+          Object {
+            "evaluate": [Function],
+            "fetch": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-package.json:npm-check-updates",
+          Object {
+            "evaluate": [Function],
+            "fix": [Function],
+          },
+        ],
+        Array [
+          "@projectlint/plugin-package.json:npm-package-json-lint",
+          Object {
+            "evaluate": [Function],
+            "fix": [Function],
+          },
+        ],
+      ],
+    }
+  `);
+});
