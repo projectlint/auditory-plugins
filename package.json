@@ -27,7 +27,8 @@
     "@projectlint/plugin-README": "github:projectlint/plugin-README",
     "@projectlint/plugin-node.js": "github:projectlint/plugin-Node.js",
     "@projectlint/plugin-operating-system": "github:projectlint/plugin-Operating-System",
-    "@projectlint/plugin-package.json": "github:projectlint/plugin-package.json"
+    "@projectlint/plugin-package.json": "github:projectlint/plugin-package.json",
+    "@projectlint/plugin-sloc": "github:projectlint/plugin-sloc"
   },
   "devDependencies": {
     "@projectlint/projectlint": "github:projectlint/projectlint",
